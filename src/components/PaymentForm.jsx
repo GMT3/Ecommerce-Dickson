@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // import mock data
 import { product } from '../_mock';
 
-{/* PaymentForm */}
+// PaymentForm
 export default function PaymentForm(){
 
   const onSubmit = (event) => {
@@ -135,7 +135,7 @@ export default function PaymentForm(){
     );
 }
 
-{/* Shopping Basket - Items List */}
+// Shopping Basket - Items List
 function ItemsList({items = []}){
 
   return(
@@ -184,7 +184,7 @@ ItemsList.prototype = {
   items: PropTypes.array.isRequired
 }
 
-{/* Item */}
+// Item
 function Item({item}){
   const [quantity, setQuantity] = React.useState(1);
 
