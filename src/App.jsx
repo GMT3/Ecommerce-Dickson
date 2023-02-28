@@ -3,7 +3,10 @@ import { PaymentForm } from './components';
 
 function App() {
   return (
-    <PaymentForm />
+    <>
+      {/* Main payment form */}
+      <PaymentForm />
+    </>
   );
 }
 

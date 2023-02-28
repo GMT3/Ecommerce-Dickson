@@ -2,9 +2,9 @@ import * as React from "react";
 import PropTypes from "prop-types";
 
 // import mock data
-
 import { product } from '../_mock';
 
+{/* PaymentForm */}
 export default function PaymentForm(){
 
   const onSubmit = (event) => {
@@ -14,9 +14,13 @@ export default function PaymentForm(){
     return(
       <div className="min-h-screen m-8">
         <div className="md:grid md:grid-cols-3 md:gap-6 w-full">
+
+          {/* Shopping Basket */}
           <div className="mt-5 md:col-span-1 sm:col-span-3 md:mt-0">
             <ItemsList items={[1,2,3,4,5]} />
           </div>
+
+          {/* Main payment form */}
           <div className="mt-5 md:col-span-2 sm:col-span-3 md:mt-0">
             <form noValidate onSubmit={onSubmit}>
               <div className="shadow sm:overflow-hidden sm:rounded-md">
@@ -131,6 +135,7 @@ export default function PaymentForm(){
     );
 }
 
+{/* Items List */}
 function ItemsList({items = []}){
 
   return(
@@ -179,9 +184,11 @@ ItemsList.prototype = {
   items: PropTypes.array.isRequired
 }
 
+{/* Item */}
 function Item({item}){
   const [quantity, setQuantity] = React.useState(1);
 
+  // function for changing quantity value
   const changeQuantity = (quantityOffset) => {
     let _quantity = quantityOffset;
     setQuantity(_quantity <= 1 ? 1 : _quantity);
