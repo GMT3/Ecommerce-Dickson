@@ -4,7 +4,7 @@ import { PaymentForm } from './components';
 function App() {
   return (
     <>
-      {/* Main payment form */}
+      {/* Checkout payment form */}
       <PaymentForm />
     </>
   );
