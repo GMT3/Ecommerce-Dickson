@@ -135,7 +135,7 @@ export default function PaymentForm(){
     );
 }
 
-{/* Items List */}
+{/* Shopping Basket - Items List */}
 function ItemsList({items = []}){
 
   return(
