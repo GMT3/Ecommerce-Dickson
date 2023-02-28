@@ -60,7 +60,7 @@ export default function PaymentForm(){
                   <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-3 sm:col-span-2">
                       <label htmlFor="expiry-date" className="block text-sm font-medium text-gray-700">
-                        {"Expiration Data (MM/YY)"}
+                        {"Expiration Date (MM/YY)"}
                       </label>
                       <div className="mt-1 flex rounded-md shadow-sm">
                         <input
