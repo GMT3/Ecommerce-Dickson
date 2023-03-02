@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.step-item:last-child svg:last-child{
+    display: none;
+}

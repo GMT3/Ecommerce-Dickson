@@ -12,18 +12,23 @@ export default function PaymentForm(){
   };
 
     return(
-      <div className="min-h-screen m-8">
-        <div className="md:grid md:grid-cols-3 md:gap-6 w-full">
+      <div className="md:grid md:grid-cols-3 md:gap-6 w-full">
 
-          {/* Shopping Basket */}
-          <div className="mt-5 md:col-span-1 sm:col-span-3 md:mt-0">
+        {/* Shopping Basket */}
+        <div className="mt-5 md:col-span-1 sm:col-span-3 md:mt-0">
             <ItemsList items={[1,2,3,4,5]} />
-          </div>
+        </div>
 
-          {/* Main payment form */}
-          <div className="mt-5 md:col-span-2 sm:col-span-3 md:mt-0">
+        {/* Main payment form */}
+        <div className="mt-5 md:col-span-2 sm:col-span-3 md:mt-0">
             <form noValidate onSubmit={onSubmit}>
               <div className="shadow sm:overflow-hidden sm:rounded-md">
+                <div className="bg-gray-50 format-headings format-h2:strong px-4 py-3 sm:px-6">
+                    <h2 className=" text-lg font-bold">You're almost there. Make the payment</h2>
+                </div>
+
+                <hr className="h-px bg-transparent border-0 dark:bg-gray-300" />
+
                 <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
                   <div className="grid grid-cols-3 gap-6">
                     <div className="col-span-3 sm:col-span-3">
@@ -129,8 +134,8 @@ export default function PaymentForm(){
                 </div>
               </div>
             </form>
-          </div>
         </div>
+
       </div>
     );
 }
@@ -141,6 +146,12 @@ function ItemsList({items = []}){
   return(
     <React.Fragment>
       <div className="shadow sm:overflow-hidden sm:rounded-md">
+        <div className="bg-gray-50 format-headings format-h2:strong px-4 py-3 sm:px-6">
+            <h2 className=" text-lg font-bold">Cart Summery</h2>
+        </div>
+
+        <hr className="h-px bg-transparent border-0 dark:bg-gray-300" />
+
         <div className="space-y-6 bg-white px-4 py-2 sm:px-6 sm:py-3">
           
           <ul className="overflow-auto w-full max-h-96 divide-y divide-gray-200 dark:divide-gray-300">
