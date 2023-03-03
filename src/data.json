@@ -1,0 +1,334 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "john_doe",
+            "password": "password123",
+            "full_name": "John Doe",
+            "profile_image_url": "https://randomuser.me/api/portraits/men/1.jpg",
+            "gender": "Male",
+            "role": "customer"
+        },
+        {
+            "id": 2,
+            "username": "jane_smith",
+            "password": "password456",
+            "full_name": "Jane Smith",
+            "profile_image_url": "https://randomuser.me/api/portraits/women/1.jpg",
+            "gender": "Female",
+            "role": "vendor"
+        },
+        {
+            "id": 3,
+            "username": "bob_jones",
+            "password": "password789",
+            "full_name": "Bob Jones",
+            "profile_image_url": "https://randomuser.me/api/portraits/men/2.jpg",
+            "gender": "Male",
+            "role": "customer"
+        },
+        {
+            "id": 4,
+            "username": "sara_kim",
+            "password": "passwordabc",
+            "full_name": "Sara Kim",
+            "profile_image_url": "https://randomuser.me/api/portraits/women/2.jpg",
+            "gender": "Female",
+            "role": "customer"
+        },
+        {
+            "id": 5,
+            "username": "jim_smith",
+            "password": "passworddef",
+            "full_name": "Jim Smith",
+            "profile_image_url": "https://randomuser.me/api/portraits/men/3.jpg",
+            "gender": "Male",
+            "role": "vendor"
+        },
+        {
+            "id": 6,
+            "username": "emily_wong",
+            "password": "passwordghi",
+            "full_name": "Emily Wong",
+            "profile_image_url": "https://randomuser.me/api/portraits/women/3.jpg",
+            "gender": "Female",
+            "role": "customer"
+        },
+        {
+            "id": 7,
+            "username": "david_lee",
+            "password": "passwordjkl",
+            "full_name": "David Lee",
+            "profile_image_url": "https://randomuser.me/api/portraits/men/4.jpg",
+            "gender": "Male",
+            "role": "customer"
+        },
+        {
+            "id": 8,
+            "username": "alice_kim",
+            "password": "passwordmno",
+            "full_name": "Alice Kim",
+            "profile_image_url": "https://randomuser.me/api/portraits/women/4.jpg",
+            "gender": "Female",
+            "role": "vendor"
+        },
+        {
+            "id": 9,
+            "username": "sam_wang",
+            "password": "passwordpqr",
+            "full_name": "Sam Wang",
+            "profile_image_url": "https://randomuser.me/api/portraits/men/5.jpg",
+            "gender": "Male",
+            "role": "customer"
+        },
+        {
+            "id": 10,
+            "username": "lisa_chen",
+            "password": "passwordstu",
+            "full_name": "Lisa Chen",
+            "profile_image_url": "https://randomuser.me/api/portraits/women/5.jpg",
+            "gender": "Female",
+            "role": "customer"
+        },
+        {
+            "id": 100,
+            "username": "admin",
+            "password": "admin123",
+            "full_name": "Admin User",
+            "profile_image_url": "https://randomuser.me/api/portraits/men/2.jpg",
+            "gender": "",
+            "role": "admin"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Blue T-Shirt",
+            "description": "A comfortable blue t-shirt made from 100% cotton.",
+            "price": 19.99,
+            "category_tags": [
+                "Clothing",
+                "Men's Clothing"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 8
+        },
+        {
+            "id": 2,
+            "name": "Red Dress",
+            "description": "A beautiful red dress for special occasions.",
+            "price": 99.99,
+            "category_tags": [
+                "Clothing",
+                "Women's Clothing"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 2
+        },
+        {
+            "id": 3,
+            "name": "Wireless Headphones",
+            "description": "High-quality wireless headphones for music lovers.",
+            "price": 149.99,
+            "category_tags": [
+                "Electronics"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 5
+        },
+        {
+            "id": 4,
+            "name": "Smart Watch",
+            "description": "A sleek and stylish watch that can do it all.",
+            "price": 249.99,
+            "category_tags": [
+                "Electronics",
+                "Wearable Technology"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 1
+        },
+        {
+            "id": 5,
+            "name": "Portable Charger",
+            "description": "A powerful and compact charger for your mobile devices.",
+            "price": 39.99,
+            "category_tags": [
+                "Electronics"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 5
+        },
+        {
+            "id": 6,
+            "name": "Digital Camera",
+            "description": "Capture stunning photos and videos with this advanced camera.",
+            "price": 599.99,
+            "category_tags": [
+                "Electronics",
+                "Cameras"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 2
+        },
+        {
+            "id": 7,
+            "name": "Wireless Speaker",
+            "description": "Stream your music wirelessly with this high-quality speaker.",
+            "price": 99.99,
+            "category_tags": [
+                "Electronics",
+                "Audio"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 8
+        },
+        {
+            "id": 8,
+            "name": "Gaming Laptop",
+            "description": "Experience top-notch gaming performance with this powerful laptop.",
+            "price": 1499.99,
+            "category_tags": [
+                "Electronics",
+                "Gaming"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 5
+        },
+        {
+            "id": 9,
+            "name": "Smart Home Hub",
+            "description": "Control all your smart home devices from one central hub.",
+            "price": 199.99,
+            "category_tags": [
+                "Electronics",
+                "Smart Home"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 8
+        },
+        {
+            "id": 10,
+            "name": "Fitness Tracker",
+            "description": "Track your fitness goals and monitor your health with this smart device.",
+            "price": 79.99,
+            "category_tags": [
+                "Electronics",
+                "Wearable Technology",
+                "Fitness"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 2
+        },
+        {
+            "id": 11,
+            "name": "Wireless Earbuds",
+            "description": "Listen to your favorite music and podcasts without any wires.",
+            "price": 99.99,
+            "category_tags": [
+                "Electronics",
+                "Audio"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 2
+        },
+        {
+            "id": 12,
+            "name": "Black Shoes",
+            "description": "A comfortable pair of black shoes for everyday wear.",
+            "price": 59.99,
+            "category_tags": [
+                "Shoes"
+            ],
+            "image_url": "http://via.placeholder.com/500x500",
+            "vendor_id": 5
+        }
+    ],
+    "reviews": [
+        {
+            "id": 1,
+            "product_id": 1,
+            "user_id": 1,
+            "rating": 4,
+            "comment": "This t-shirt is very comfortable!"
+        },
+        {
+            "id": 2,
+            "product_id": 2,
+            "user_id": 4,
+            "rating": 5,
+            "comment": "I love this dress! It's perfect for weddings."
+        },
+        {
+            "id": 3,
+            "product_id": 3,
+            "user_id": 7,
+            "rating": 3,
+            "comment": "The sound quality is good, but they're a bit heavy."
+        },
+        {
+            "id": 4,
+            "product_id": 4,
+            "user_id": 3,
+            "rating": 5,
+            "comment": "Great Watch  My Friends love it."
+        },
+        {
+            "id": 5,
+            "product_id": 5,
+            "user_id": 1,
+            "rating": 3,
+            "comment": "This is mid I'll give it a 4 outta 10 at best"
+        },
+        {
+            "id": 6,
+            "product_id": 6,
+            "user_id": 3,
+            "rating": 5,
+            "comment": "This camera is the best!"
+        },
+        {
+            "id": 7,
+            "product_id": 7,
+            "user_id": 4,
+            "rating": 4,
+            "comment": "Great sound quality and easy to use."
+        },
+        {
+            "id": 8,
+            "product_id": 8,
+            "user_id": 5,
+            "rating": 4,
+            "comment": "Excellent performance and graphics, but a bit heavy."
+        },
+        {
+            "id": 9,
+            "product_id": 9,
+            "user_id": 6,
+            "rating": 3,
+            "comment": "Could be more user-friendly and intuitive."
+        },
+        {
+            "id": 10,
+            "product_id": 10,
+            "user_id": 7,
+            "rating": 5,
+            "comment": "Love the fitness tracking features and the long battery life."
+        },
+        {
+            "id": 11,
+            "product_id": 11,
+            "user_id": 8,
+            "rating": 3,
+            "comment": "Decent sound quality but a bit uncomfortable to wear for long periods."
+        },
+        {
+            "id": 12,
+            "product_id": 12,
+            "user_id": 8,
+            "rating": 3,
+            "comment": "Decent shoes they fit perfectly."
+        }        
+
+    ]
+}
