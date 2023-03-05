@@ -74,6 +74,7 @@ export default function PaymentForm({handleNext, handleBack}){
                                                 <input
                                                     id="email-address"
                                                     type="email"
+                                                    role="textbox"
                                                     name={email.name}
                                                     placeholder={email.label}
                                                     value={values.email}
@@ -94,6 +95,7 @@ export default function PaymentForm({handleNext, handleBack}){
                                                 <input
                                                     id="card-number"
                                                     type="text"
+                                                    role="textbox"
                                                     name={cardNumber.name}
                                                     value={values.cardNumber}
                                                     onChange={handleChange}
@@ -114,6 +116,7 @@ export default function PaymentForm({handleNext, handleBack}){
                                                     <input
                                                         id="expiry-date"
                                                         type="month"
+                                                        role="textbox"
                                                         min={new Date()}
                                                         max={new Date("2025/12/31")}
                                                         name={expiryDate.name}
@@ -134,6 +137,7 @@ export default function PaymentForm({handleNext, handleBack}){
                                                 <input
                                                     id="cvv"
                                                     type="text"
+                                                    role="textbox"
                                                     name={cvv.name}
                                                     placeholder={cvv.label}
                                                     value={values.cvv}
@@ -184,15 +188,17 @@ export default function PaymentForm({handleNext, handleBack}){
 
                                     <div className="flex justify-between items-center bg-gray-50 px-4 py-3 text-right sm:px-6">
                                       <button
+                                        role="button"
                                         className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                         onClick={handleBack}
                                       >
                                         Back
                                       </button>
                                       <button
-                                          type="submit"
-                                          disabled={isSubmitting}
-                                          className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                                        type="submit"
+                                        role="button"
+                                        disabled={isSubmitting}
+                                        className="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                                       >
                                         Place Order
                                       </button>

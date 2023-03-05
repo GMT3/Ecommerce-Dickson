@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 
 import ErrorLabel from "./ErrorLabel";
 import validationSchema from './models/validationSchema';
@@ -7,9 +7,15 @@ import checkoutFormModel from './models/formModels';
 
 const  { formField } = checkoutFormModel;
 
-export default function DeliveryInfoForm({handleNext}){
+export default function DeliveryInfoForm({handleNext, onSubmit}){
     const { firstName, lastName, address, city, state, postcode, country } = formField;
     const addressValidationSchema = validationSchema[0];
+
+    const handleSubmit = async (values) => {
+        await new Promise(resolve => setTimeout(resolve, 500));
+        onSubmit(values);
+        handleNext();
+    }
 
     return(
         <div className="flex w-full content-center">
@@ -24,11 +30,7 @@ export default function DeliveryInfoForm({handleNext}){
                         postcode: "",
                         country: ""
                     }}
-                    onSubmit={async values => {
-                        await new Promise(resolve => setTimeout(resolve, 500));
-                        console.log({values});
-                        handleNext();
-                    }}
+                    onSubmit={handleSubmit}
                     validationSchema={addressValidationSchema}
                 >
                     {props => {
@@ -42,7 +44,7 @@ export default function DeliveryInfoForm({handleNext}){
                         } = props;
 
                         return (
-                            <form aria-label="delivery-details-form" noValidate onSubmit={handleSubmit}>
+                            <Form aria-label="delivery-details-form">
                                 <div className="shadow sm:overflow-hidden sm:rounded-md">
                                     <div className="bg-gray-50 format-headings format-h2:strong px-4 py-3 sm:px-6">
                                         <h2 className=" text-lg font-bold">Delivery Details</h2>
@@ -60,6 +62,7 @@ export default function DeliveryInfoForm({handleNext}){
                                                     <input
                                                         type="text"
                                                         id="firstname"
+                                                        role="textbox"
                                                         name={firstName.name}
                                                         placeholder={firstName.label}
                                                         value={values.firstName}
@@ -78,6 +81,7 @@ export default function DeliveryInfoForm({handleNext}){
                                                     <input
                                                         type="text"
                                                         id="lastname"
+                                                        role="textbox"
                                                         name={lastName.name}
                                                         placeholder={lastName.label}
                                                         value={values.lastName}
@@ -99,6 +103,7 @@ export default function DeliveryInfoForm({handleNext}){
                                                     <input
                                                         type="text"
                                                         id="address"
+                                                        role="textbox"
                                                         name={address.name}
                                                         placeholder={address.label}
                                                         value={values.address}
@@ -120,6 +125,7 @@ export default function DeliveryInfoForm({handleNext}){
                                                     <input
                                                         type="text"
                                                         id="city"
+                                                        role="textbox"
                                                         name={city.name}
                                                         placeholder={city.label}
                                                         value={values.city}
@@ -138,6 +144,7 @@ export default function DeliveryInfoForm({handleNext}){
                                                     <input
                                                         type="text"
                                                         id="state"
+                                                        role="textbox"
                                                         name={state.name}
                                                         placeholder={state.label}
                                                         value={values.state}
@@ -159,6 +166,7 @@ export default function DeliveryInfoForm({handleNext}){
                                                     <input
                                                         type="text"
                                                         id="postcode"
+                                                        role="textbox"
                                                         name={postcode.name}
                                                         placeholder={postcode.label}
                                                         value={values.postcode}
@@ -177,6 +185,7 @@ export default function DeliveryInfoForm({handleNext}){
                                                     <input
                                                         type="text"
                                                         id="Country"
+                                                        role="textbox"
                                                         name={country.name}
                                                         placeholder={country.label}
                                                         value={values.country}
@@ -192,8 +201,9 @@ export default function DeliveryInfoForm({handleNext}){
                                     
                                     <hr className="h-px bg-transparent border-0 dark:bg-gray-300" />
 
-                                    <div className="flex w-full justify-end bg-gray-50 px-4 py-3 text-right sm:px-6">
+                                    <div role="button" className="flex w-full justify-end bg-gray-50 px-4 py-3 text-right sm:px-6">
                                         <button
+                                            aria-label="address-info-button"
                                             type="submit"
                                             disabled={isSubmitting}
                                             className="inline-flex rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -202,7 +212,7 @@ export default function DeliveryInfoForm({handleNext}){
                                         </button>
                                     </div>
                                 </div>
-                            </form>
+                            </Form>
                         );
                     }}
                 </Formik>

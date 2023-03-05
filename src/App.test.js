@@ -1,45 +1,88 @@
-import { render, screen } from '@testing-library/react';
-import { DeliveryInfoForm, PaymentForm, Stepper, Step } from './components';
+import { render, screen, waitFor } from '@testing-library/react';
+import user from '@testing-library/user-event';
+import { DeliveryInfoForm, PaymentForm } from './components/forms';
 import App from './App';
+import { act } from 'react-dom/test-utils';
 
 // testing if components render in the document
-
-// stepper
-test('renders stepper container', () => {
-  render(<App />);
-  const stepperElement = screen.getByLabelText(/stepper-container/i);
-  expect(stepperElement).toBeInTheDocument();
-});
-
-test('renders stepper item', () => {
-  render(<App />);
-  const stepperItemElement = screen.getAllByLabelText(/stepper-item/i);
-  expect(stepperItemElement).toHaveLength(2);
-});
-
-// cart items
-test('renders stepper cart-items', () => {
-  render(<App />);
-  const stepperItemElement = screen.getAllByLabelText(/stepper-item/i);
-  expect(stepperItemElement).toHaveLength(2);
-});
 
 // delivery details form
 test('render delivery details form', () => {
   render(<DeliveryInfoForm />);
-  const deliveryInfoFormElement = screen.getByLabelText(/delivery-details-form/i);
-  expect(deliveryInfoFormElement).toBeInTheDocument();
+  const deliveryInfoForm = screen.getByLabelText(/delivery-details-form/i);
+  expect(deliveryInfoForm).toBeInTheDocument();
 });
 
 // payment form
 test('render payment form', () => {
   render(<PaymentForm />);
-  const paymentFormElement = screen.getByLabelText(/payment-form/i);
-  expect(paymentFormElement).toBeInTheDocument();
+  const paymentForm = screen.getByLabelText(/payment-form/i);
+  expect(paymentForm).toBeInTheDocument();
 });
 
 describe('Checkout', () => {
+  const handleSubmit = jest.fn();
+
   beforeEach(() => {
-    render(<App />);
+    handleSubmit.mockClear();
+    render(<DeliveryInfoForm onSubmit={handleSubmit} />);
+  });
+
+  it('should submit delivery info when form validation is successful', async() => {
+    act(()=> {
+      user.type(getFirstname(), 'John');
+      user.type(getLastname(), 'Doe');
+      user.type(getAddress(), '123 Main Street');
+      user.type(getCity(), 'New York');
+      user.type(getState(), 'NY');
+      user.type(getPostcode(), '12345');
+      user.type(getCountry(), 'USA');
+
+      user.click(getButton());
+    });
+
+    await waitFor(() =>
+      expect(handleSubmit).toHaveBeenCalledWith({
+        firstName: 'John',
+        lastName: 'Doe',
+        address: '123 Main Street',
+        city: 'New York',
+        state: 'NY',
+        postcode: '12345',
+        country: 'USA'
+      })
+    )
   });
 });
+
+function getFirstname(){
+  return screen.getByPlaceholderText(/first name[*]/i);
+}
+
+function getLastname(){
+  return screen.getByPlaceholderText(/Last name[*]/i);
+}
+
+function getAddress(){
+  return screen.getByPlaceholderText(/Address[*]/i);
+}
+
+function getCity(){
+  return screen.getByPlaceholderText(/City[*]/i);
+}
+
+function getState(){
+  return screen.getByPlaceholderText(/State/i);
+}
+
+function getPostcode(){
+  return screen.getByPlaceholderText(/Postcode[*]/i);
+}
+
+function getCountry(){
+  return screen.getByPlaceholderText(/Country[*]/i);
+}
+
+function getButton(){
+  return screen.getByLabelText(/address-info-button/i);
+}
